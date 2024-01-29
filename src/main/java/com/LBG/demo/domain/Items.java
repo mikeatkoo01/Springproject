@@ -16,9 +16,39 @@ public class Items {
 
 	private Integer id;
 
-	private String Type;
+	private String type;
 
-	private String Title;
+	private String title;
+
+	private boolean available = true;
+
+	/**
+	 * @return the available
+	 */
+	public boolean isAvailable() {
+		return available;
+	}
+
+	/**
+	 * @param available the available to set
+	 */
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+
+	/**
+	 * @return the available
+	 */
+//	public boolean isAvailable() {
+//		return available;
+//	}
+//
+//	/**
+//	 * @param available the available to set
+//	 */
+//	public void setAvailable(boolean available) {
+//		this.available = available;
+//	}
 
 	@JsonBackReference
 	@ManyToOne
@@ -47,28 +77,42 @@ public class Items {
 	 * @return the type
 	 */
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	/**
 	 * @param type the type to set
 	 */
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
 	/**
 	 * @return the title
 	 */
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 
 	/**
 	 * @param title the title to set
 	 */
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
+	}
+
+	/**
+	 * @return the people
+	 */
+	public People getPeople() {
+		return people;
+	}
+
+	/**
+	 * @param people the people to set
+	 */
+	public void setPeople(People people) {
+		this.people = people;
 	}
 
 }

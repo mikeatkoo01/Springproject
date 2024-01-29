@@ -50,7 +50,7 @@ public class PeopleController {
 	}
 
 	@GetMapping("/get/{id}")
-	public ResponseEntity<People> getItems(@PathVariable int id) {
+	public ResponseEntity<People> getPeople(@PathVariable int id) {
 		return this.service.readPeople(id);
 	}
 

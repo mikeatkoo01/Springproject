@@ -57,6 +57,9 @@ public class ItemsService {
 			existing.setTitle(newItems.getTitle());
 		}
 
+		if (newItems.getPeople() != null)
+			existing.setAvailable(false);
+
 		Items updated = this.repo.save(existing);
 
 		return ResponseEntity.ok(updated);
@@ -72,5 +75,17 @@ public class ItemsService {
 	public List<Items> getItems() {
 		return this.repo.findAll();
 	}
+
+//	public ResponseEntity<Items> checkOutitem(int id, Items newItems) {
+//		Optional<Items> rented = this.repo.findById(id);
+//		
+//		if(rented.isEmpty()) {
+//			return new ResponseEntity<Items>(HttpStatus.NOT_FOUND);
+//		}
+//		
+//		
+//		Items existing = rented.get();
+//		
+//		if (newitems.is)
 
 }
